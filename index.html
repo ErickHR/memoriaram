@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles/index.css">
+</head>
+
+<body>
+
+    <div id="app">
+        <div class="app__container">
+            <line-app id="primera" :cant="3" @buscarregistro="buscarregistro"></line-app>
+            <!-- <matriz-app></matriz-app> -->
+            <matriz-ram ref="matrizRam" @mostrarregistroinput="mostrarregistroinput" @obtenerdata="obtenerdata"></matriz-ram>
+            <line-app id="segunda" ref="readWrite" :cant="1"  ></line-app>
+            <line-app id="tercera" :cant="6" ref="linesMostrar"></line-app>
+        </div>
+    </div>
+    <script src="script/component/line.js"></script>
+    <script src="script/component/matriz.js"></script>
+    <script src="script/component/matrizRam.js"></script>
+    <script src="script/index.js"></script>
+</body>
+
+</html>

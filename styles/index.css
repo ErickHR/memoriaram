@@ -1,0 +1,110 @@
+* {
+    margin: 0;
+    padding: 0;
+    
+  }
+
+  #app{
+    left: 0px;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+  }
+
+.app__container{
+    margin: auto;
+    min-width: 800px;
+    max-width: 800px;
+    display: grid;
+    grid-template-rows: 150px auto 180px;
+    grid-template-areas: 
+        ". segunda"
+        "primera matrizRam"
+        ". tercera"
+}
+/*primera linea*/
+.lines-primera{
+    grid-area: primera;
+    display: flex;
+
+}
+
+/*segunda linea*/
+.lines-segunda{
+    grid-area: segunda;
+    position: relative;
+}
+
+/*tercera linea*/
+
+.lines-tercera{
+    grid-area: tercera;
+}
+
+.line__container-number{
+    width: 150px;
+    margin-top: 2px;
+}
+
+.input-number{
+    width: 50px;
+    text-align: center;
+}
+
+/*lineas general*/
+.line__container{
+    width: 150px;
+    height: 8px;
+    background-color: rgb(180, 180, 180);
+    margin-top: 2px;
+    position: relative;
+}
+
+.lines__wrapper{
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    margin-right: 0;
+}
+
+.lines__wrapper-rotate{
+    position: absolute;
+    transform: rotate(90deg);
+    margin-top: 70px;
+}
+
+.line__barra{
+    /* width: 0%; */
+    height: 8px;
+    width: 8px;
+    border-radius: 100%;
+    background-color: rgb(255, 0, 0);
+    position: absolute;
+    left: 0px;
+    top: -1px;
+}
+
+/*matriz Ram*/
+
+.matriz-ram{
+    grid-area: matrizRam;
+    width: fit-content;
+}
+
+.matriz__container{
+    display: flex;
+}
+
+
+.matriz__input{
+    width: 30px;
+}
+
+.lines__wrapper-bottom {
+    bottom: 70px;
+}
+
+.lines__wrapper-margins{
+    margin-top: 200px;
+    flex-direction: column-reverse;
+}
