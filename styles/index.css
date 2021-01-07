@@ -17,8 +17,9 @@
     max-width: 800px;
     display: grid;
     grid-template-rows: 150px auto 180px;
+    grid-template-columns: 400px auto auto;
     grid-template-areas: 
-        ". segunda"
+        "inputs segunda"
         "primera matrizRam"
         ". tercera"
 }
@@ -44,6 +45,17 @@
 .line__container-number{
     width: 150px;
     margin-top: 2px;
+    
+}
+
+.line__container-number--flex{
+    display: flex;
+    justify-content: flex-end;
+    width: 50px;
+}
+
+.line__container-number--flex-new{
+    width: 50px;
 }
 
 .input-number{
@@ -107,4 +119,8 @@
 .lines__wrapper-margins{
     margin-top: 200px;
     flex-direction: column-reverse;
+}
+
+#inputsRam{
+    grid-area: inputs;
 }

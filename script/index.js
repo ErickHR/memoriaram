@@ -6,7 +6,10 @@ let app = new Vue({
         numero : 13,
         cant : 0,
         mensaje:'', 
-        p_error:false
+        p_error:false,
+        cantidadOne : 3,
+        cantidadTwo : 1,
+        cantidadthree : 6,
     },
     computer : {
         
@@ -30,9 +33,6 @@ let app = new Vue({
             this.$refs.linesMostrar.mostrarregistroinput( data )
         },
         obtenerdata(){
-            console.log('obtener Datos---')
-            console.log(this.$refs.linesMostrar.obtenerData())
-            return 486
             return this.$refs.linesMostrar.obtenerData()
         },
         incrementar (){
@@ -40,7 +40,15 @@ let app = new Vue({
         },
         decrementar(){
             this.numero--
-        },   
+        },
+        createdatas( datas ){
+            this.cantidadOne = Math.log2( datas.length )
+            this.cantidadthree =datas[0].length
+            this.$refs.matrizRam.createdatas( datas )
+        },
+        procesate(){
+            this.$refs.primeras.entrada( )
+        }   
     },
     watch : {
         numero:function (val){
