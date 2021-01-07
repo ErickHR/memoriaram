@@ -32,6 +32,7 @@ Vue.component('matriz-ram', {
       },
       async mostrarRegistro( data, accion ){
         let index = this.convertirBinario(data)
+        console.log(index)
         this.$emit('mostrarregistroinput', this.tamRam[index])
       }, 
       async insertarRegistro( posicion, data ){

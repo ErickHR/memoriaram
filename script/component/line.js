@@ -8,7 +8,8 @@ Vue.component('line-app', {
         widthLine: 0,
         inputArray:[],
         mostrarArray:[],
-        readWrite : 1
+        readWrite : 1,
+        showEnd : true
       }
     },
     template: `
@@ -29,7 +30,7 @@ Vue.component('line-app', {
                 <div class="line__barra" :style="{left:widthLine+'%'}"></div>
             </div>
         </div>
-        <div class="lines__wrapper" :class="[id == 'tercera'? 'lines__wrapper-rotate lines__wrapper-margins':'']" v-if="id=='tercera'">
+        <div class="lines__wrapper" :class="[id == 'tercera'? 'lines__wrapper-rotate lines__wrapper-margins':'']" v-if="id=='tercera' && showEnd">
             <div class="line__container-number" v-for="i in cant" :key="'b-'+i">
                 <input type="number" class="input-number" v-model="mostrarArray[i-1]">
             </div>
@@ -54,9 +55,9 @@ Vue.component('line-app', {
 
         },
         entrada(){
-
+            console.log('entrooo')
             if( this.inputArray.length != this.cant ) return
-
+            console.log('4654')
             let binario = 0
             this.inputArray.forEach( item => {
                 if( item )
@@ -69,14 +70,18 @@ Vue.component('line-app', {
             } )
 
             if( binario == this.inputArray.length ) {
+                console.log('cambiando')
                 this.$emit('buscarregistro', this.inputArray)
             }
 
         },
         mostrarregistroinput( data ) {
-            
+            console.log(data)
+            console.log('mostrandooo4564654')
+            this.showEnd = false
             data.forEach( ( item, index) => {
                 this.mostrarArray[ index ] = item
+                this.showEnd = true
             } )
 
         },
